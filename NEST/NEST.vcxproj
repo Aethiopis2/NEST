@@ -109,7 +109,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\SDL2_ttf-2.24.0\lib\x64;C:\SDL2-2.32.10\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sdl2.lib;sdl2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sdl2.lib;sdl2main.lib;sdl2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -127,20 +127,24 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\SDL2_ttf-2.24.0\lib\x64;C:\SDL2-2.32.10\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sdl2.lib;sdl2main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sdl2.lib;sdl2main.lib;sdl2_ttf.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="basics.hpp" />
-    <ClInclude Include="cpu6502.h" />
-    <ClInclude Include="game.hpp" />
+    <ClInclude Include="cpu6502.hpp" />
+    <ClInclude Include="iv.hpp" />
+    <ClInclude Include="NEST.hpp" />
     <ClInclude Include="nes.hpp" />
+    <ClInclude Include="texture-manager.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cpu6502.cpp" />
-    <ClCompile Include="game.cpp" />
+    <ClCompile Include="iv.cpp" />
+    <ClCompile Include="NEST.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="nes.cpp" />
+    <ClCompile Include="texture-manager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

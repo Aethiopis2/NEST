@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game.hpp">
+    <ClInclude Include="NEST.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="basics.hpp">
@@ -24,12 +24,18 @@
     <ClInclude Include="nes.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cpu6502.h">
+    <ClInclude Include="cpu6502.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="texture-manager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="iv.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="game.cpp">
+    <ClCompile Include="NEST.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
@@ -39,6 +45,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="cpu6502.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="texture-manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="iv.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

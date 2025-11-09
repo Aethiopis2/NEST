@@ -40,7 +40,10 @@ NES::~NES() { }
 void NES::Write(const u16 address, const u8 data)
 {
 	if (address >= 0 && address <= 0xFFFF)
+	{
 		ram[address] = data;
+		addr_written.push_back(address);
+	} // end if addr written to
 } // end Write
 
 

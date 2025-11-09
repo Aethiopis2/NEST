@@ -1,5 +1,5 @@
 /**
- * @brief A generic game engine class that wrapps around SDL functions that power
+ * @brief A generic NEST engine class that wrapps around SDL functions that power
  *	NEST. In a sense this is the NEST itself.
  *
  * @author Rediet Worku
@@ -9,26 +9,18 @@
 
 
 //=====================================================================|
-#include "basics.hpp"
-#include <SDL.h>
+#include "iv.hpp"
 
-
-
-//=====================================================================|
-#define WINDOW_WIDTH	1024
-#define WINDOW_HEIGHT	768
-#define WINDOW_X		SDL_WINDOWPOS_CENTERED
-#define WINDOW_Y		SDL_WINDOWPOS_CENTERED
 
 
 
 //=====================================================================|
-class Game
+class NEST
 {
 public:
 
-	Game();
-	~Game();
+	NEST();
+	~NEST();
 
 	bool Init(std::string title, const bool full_screen = false,
 		const int x = WINDOW_X, const int y = WINDOW_Y,
@@ -52,11 +44,13 @@ private:
 	SDL_Window* pWnd;
 	SDL_Renderer* pRenderer;
 
-	// game states
+	// NEST states
 	bool isrunning;		// indicates if main loop is running or should exit
 	bool isfull_screen;	// fullscreen vs windowed mode
-	bool isPaused;		// stops running game code when true
+	bool isPaused;		// stops running NEST code when true
 
+	IV iv;				// internal view - snapshot of NES internal dump
+	int screen_id = 0;
 
 	// window props
 	int x, y, width, height;
@@ -64,4 +58,7 @@ private:
 
 	// misc
 	std::string error_string;
+
+	// util
+	void Handle_Keys(SDL_Event& event);
 };

@@ -1,32 +1,32 @@
 /**
- * @brief driver module for NEST
+ * @brief driver module for NEST acrnoym for Nintendo Entertainment System emulaTor
  *
  * @author Rediet Worku
  * @date 26th of October 2021, Sunday
  */
 
 
- //=====================================================================|
-#include "game.hpp"
+//=====================================================================|
+#include "NEST.hpp"
 
 
 
 //=====================================================================|
 int main(int argc, char* argv[])
 {
-	Game game;
+	NEST NEST;
 
-	if (!game.Init("NEST v2.0"))
+	if (!NEST.Init("NEST"))
 		return 1;
 
-	while (game.Is_Running())
+	while (NEST.Is_Running())
 	{
-		if (game.Is_Paused())
+		if (NEST.Is_Paused())
 			continue;
 
-		game.Render();
-		game.Update();
-		game.Handle_Events();
+		NEST.Render();
+		NEST.Update();
+		NEST.Handle_Events();
 	} // end while 
 
 	return 0;

@@ -35,6 +35,7 @@
 
 
 
+
 //=====================================================================|
 // the 8-bit flags/status register
 #define C (1 << 0)		// carry
@@ -53,11 +54,15 @@
 
 // forward declare
 class NES;
+class IV;
 
 
 //=====================================================================|
 class CPU6502
 {
+	friend class NES;
+	friend class IV;
+
 public:
 
 	CPU6502();
@@ -81,13 +86,13 @@ private:
 	u8 x;			// the (x) indeX register
 	u8 y;			// y index register
 	u8 sp;			// the stack pointer
-	u16 pc;			// the program counter/instruction pointer
 	u8 status;		// 8-bit status registers
+	u16 pc;			// the program counter/instruction pointer
 
 	// helpers
-	u8 fetched;		// store's the next instruction fetched
 	u16 addr_abs;	// used with absoulte addressing mode
 	u16 addr_rel;	// used with relative addressing mode
+	u8 fetched;		// store's the next instruction fetched
 	u8 opcode;		// stores the next opcode
 	u8 cycles;		// the number of cycles for the instruction fetched
 
@@ -131,6 +136,7 @@ private:
 		u8(CPU6502::* Operate)(void) = nullptr;
 		u8(CPU6502::* Addrmode)(void) = nullptr;
 		u8 cycles{ 0 };
+		u8 bytes{ 0 };	// during disassembly
 	};
 
 	std::vector<INSTRUCTION> lookup;
